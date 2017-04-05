@@ -8,7 +8,11 @@
 
     app.controller("resultCtrl",function ($scope,$log,$routeParams) {
 
-        $log.info("result page")
+            $scope.placeName = $routeParams.placename||"";
+        $("#searchbox").value = $routeParams.placename;
+        $("#searchbox").val($routeParams.placename);
+
+        $log.info("result page ### "+$("#searchbox").val());
         $scope.results = [{name:"Nutan",rating : 4}];
         var service = new google.maps.places.PlacesService(document.createElement('div'));
         var latitude = parseFloat($routeParams.lat);

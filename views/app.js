@@ -12,7 +12,7 @@
                 templateUrl : "main.html",
                 controller : "mainCtrl"
             })
-            .when('/place/:lat/:lng',{
+            .when('/place/:placename/:lat/:lng',{
                 templateUrl : "result.html",
                 controller : "resultCtrl"
             })

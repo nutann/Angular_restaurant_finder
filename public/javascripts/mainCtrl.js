@@ -7,17 +7,19 @@
 
      var app = angular.module("search");
 
-     app.controller("mainCtrl",function ($scope,$log,$location) {
+     app.controller("mainCtrl",function ($scope,$log,$location,$routeParams) {
 
-
+         $("#searchbox").val("");
          var service = new google.maps.places.PlacesService($('#searchbox').get(0)); // note that it removes the content inside div with tag '#service-helper'
          var originInput = document.getElementById('searchbox');
          var originAutocomplete = new google.maps.places.Autocomplete(
              originInput);
          var $iSelector;
-         $scope.search =  function () {
-             console.log("search called in submit");
-             $location.path("/place/" +place.geometry.location.lat() +"/" +place.geometry.location.lng());
+         $scope.search =  function (event) {
+             event.preventDefault();
+             $scope.placeName = $("#searchbox").val();
+             console.log("search called in submit"+$("#searchbox").val());
+             $location.path("/place/" +$scope.placeName + "/" +place.geometry.location.lat() +"/" +place.geometry.location.lng());
 
 
          }

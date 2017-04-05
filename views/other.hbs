@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{data}}</title>
+    <script>
+        window.addEventListener('popstate', function(e) {
+            consol.log("pop state called");
+        });
+
+        var data = "{{data}}";
+        console.log("data == " +data);
+        alert("{{data}}")
+        var result = "{{result}}"
+        console.log("data == " +JSON.stringify(result));
+
+    </script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="bootstrap/css/styles.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/jquery.quick.pagination.js"></script>
+    <script type="text/javascript" src="bootstrap/js/jquery.quick.pagination.min.js"></script>
+
+
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyetWKt69Y7lzTFazGNlK7C1UGfqMRfPQ&libraries=places">//&callback=getRelevantGoogleReviews
+    </script>
+    <script src="/javascripts/script.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Want to <span>Find nearby Hotels?</span>  you are at the right place
+            <span class="glyphicon glyphicon-search"></span></h1>
+
+        <div class="rect"></div>
+
+    </header>
+    <div class="page-body">
+        <div class="search-container" >
+            <form class="form-horizontal" id="search_form" method="get" action="/search" role="search">
+
+                <input type="text" class="form-control searchinput" id="searchbox" name="search" placeholder="Near :">
+
+                <button class="btn btn-default" id="submit_button" type="button"><i class="glyphicon glyphicon-search"></i></button>
+
+
+            </form>
+            <div class="social_media">
+                <a href="https://twitter.com/intent/tweet?text=Hello%20world">
+                    <img title="Twitter" alt="Twitter" src="https://socialmediawidgets.files.wordpress.com/2014/03/01_twitter1.png" width="35" height="35" />
+                </a>
+                <a href="[full link to your LinkedIn]">
+                    <img title="LinkedIn" alt="LinkedIn" src="https://socialmediawidgets.files.wordpress.com/2014/03/07_linkedin1.png" width="35" height="35" />
+                </a>
+                <a class="fb-xfbml-parse-ignore" alt="Share on Facebook" target="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//www.cisco.com/c/en/us/products/index.html";
+                   src=sdkpreparse">
+                    <img title="Share on Facebook" alt="Share on Facebook" src="https://socialmediawidgets.files.wordpress.com/2014/03/02_facebook1.png" width="35" height="35" />
+                </a>
+                <a href="pinterestaddress">
+                    <img title="Pinterest" alt="Pinterest" src="https://socialmediawidgets.files.wordpress.com/2014/03/13_pinterest1.png" width="35" height="35" />
+                </a>
+            </div>
+        </div>
+        <div class="search_results">
+            <div class="row">
+                <ul class="horizontal-list" id="horizontal-list"></ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

@@ -11,6 +11,14 @@
             $scope.placeName = $routeParams.placename||"";
         $("#searchbox").value = $routeParams.placename;
         $("#searchbox").val($routeParams.placename);
+        $scope.getUrl = function (photos) {
+            console.log("photos called" );
+            var photoUrl = photos?(photos[0].getUrl({maxWidth: 100, maxHeight: 100}))+"photo.jpg":"image1.jpg";
+            console.log("photos called" +photoUrl);
+            return photoUrl;
+
+
+        }
 
         $log.info("result page ### "+$("#searchbox").val());
         $scope.results = [{name:"Nutan",rating : 4}];

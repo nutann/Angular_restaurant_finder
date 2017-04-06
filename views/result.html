@@ -3,7 +3,8 @@
     <div class="row">
         <ul class="horizontal-list" id="horizontal-list"></ul>
         <li ng-repeat = "result in results" class="ui-menu-item">
-            <div class="ui-img" >
+            <div class="ui-img" ng-style="{'background-image':'url(' +getUrl(result.photos)+')',
+            'background-repeat': 'no-repeat','background-size':'cover'}">
                 <span class="ui-rating">{{result.rating||"N/A"}}
                     <span class="glyphicon glyphicon-star"></span>
                 </span>

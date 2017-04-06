@@ -8,8 +8,7 @@
 
     app.controller("resultCtrl",function ($scope,$log,$routeParams) {
 
-            $scope.placeName = $routeParams.placename||"";
-        $("#searchbox").value = $routeParams.placename;
+        $scope.placeName = $routeParams.placename||"";
         $("#searchbox").val($routeParams.placename);
         $scope.getUrl = function (photos) {
             console.log("photos called" );
@@ -20,15 +19,11 @@
 
         }
 
-        $log.info("result page ### "+$("#searchbox").val());
-        $scope.results = [{name:"Nutan",rating : 4}];
+       // $scope.results = [{name:"Nutan",rating : 4}];
         var service = new google.maps.places.PlacesService(document.createElement('div'));
         var latitude = parseFloat($routeParams.lat);
         myLatLng = new google.maps.LatLng({lat: latitude, lng: parseFloat($routeParams.lng)});
-        var locationad = {
-            lat : $routeParams.lat,
-            lng : $routeParams.lng
-        }
+
 
         var request = {
                         location: myLatLng,
